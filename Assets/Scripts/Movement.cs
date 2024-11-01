@@ -81,4 +81,16 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         anim.SetBool("isGrounded",true);
     }
+
+    public void Save()
+    {
+        SaveData.instance.playerX = transform.position.x;
+        SaveData.instance.playerZ = transform.position.z;
+        SaveData.instance.playerY = transform.position.y;
+    }
+
+    public void Load()
+    {
+        transform.position = new Vector3(SaveData.instance.playerX, SaveData.instance.playerY, SaveData.instance.playerZ);
+    }
 }
