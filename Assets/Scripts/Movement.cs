@@ -79,6 +79,13 @@ public class Movement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
-        anim.SetBool("isGrounded",true);
+        anim.SetBool("isGrounded", true);
+    }
+
+    public void Save() 
+    {
+        SaveData.instance.playerX = transform.position.x;
+        SaveData.instance.playerY = transform.position.y;
+        SaveData.instance.playerZ = transform.position.z;
     }
 }
