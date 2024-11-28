@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour
 {
     public GameObject menuPanel;
     public Movement playerMovement;
+    public CollectibleCounter collectibleCounter;
 
 
 
@@ -32,12 +33,19 @@ public class MenuController : MonoBehaviour
     {
         //Fill save data
         playerMovement.Save();
+        collectibleCounter.Save();
         DataSerializer.Save();
     }
 
     public void Continue() 
     {
-        
+        if (DataSerializer.AnySaves())
+        {
+            DataSerializer.Load();
+            playerMovement.Load();
+            collectibleCounter.Load();
+        }
+
     }
 
     public void Exit() 

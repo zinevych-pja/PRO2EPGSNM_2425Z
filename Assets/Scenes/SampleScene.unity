@@ -6375,6 +6375,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 426174091}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &339885088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37373,7 +37385,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2546889638346045710}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1261313181}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 694f36e84a3cabc44ac71dd772fdefdc, type: 3}
@@ -42731,6 +42743,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1260484203}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261313181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4062257922527599779, guid: 3673a89c30dc64e438dbf1419bf61114,
+    type: 3}
+  m_PrefabInstance: {fileID: 2546889638346045710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261313186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261313181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d2a1680cb2903488f58a1df769958d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
 --- !u!1001 &1265934508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49371,6 +49402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 426174091}
   playerMovement: {fileID: 992967446}
+  collectibleCounter: {fileID: 1261313186}
 --- !u!1001 &1694976214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58308,10 +58340,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule
       objectReference: {fileID: 0}
+    - target: {fileID: 4062257922527599779, guid: 3673a89c30dc64e438dbf1419bf61114,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4062257922527599779, guid: 3673a89c30dc64e438dbf1419bf61114,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1261313186}
   m_SourcePrefab: {fileID: 100100000, guid: 3673a89c30dc64e438dbf1419bf61114, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

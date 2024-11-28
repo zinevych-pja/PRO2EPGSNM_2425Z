@@ -8,7 +8,7 @@ using UnityEngine;
 public class SaveData
 {
     public static SaveData instance; 
-    //public int collectiblesCount;
+    public int collectiblesCount;
     public float playerX, playerY, playerZ;
 
 
