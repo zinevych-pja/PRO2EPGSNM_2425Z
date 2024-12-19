@@ -9,7 +9,18 @@ public class AIController : MonoBehaviour
     Animator anim;
     SpriteRenderer sr;
 
-    public Transform point1;
+    
+
+    //For 2 points
+    //public Transform point1;
+    //public Transform point2;
+    //public bool isGoingToPoint1 = true;
+
+    public float stoppingDistanceCheck = 0.01f;
+
+    public List<Transform> points;
+    public int targetIndex = 0;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -19,11 +30,41 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
-        if (point1 == null) 
+        if (points.Count < 1) 
         {
             return;
         }
-        agent.SetDestination(point1.position);
+        if (agent.remainingDistance < stoppingDistanceCheck)
+        {
+            targetIndex = Random.Range(0, points.Count);
+
+            //For ordered moving between points
+            //targetIndex++;
+            //if (targetIndex >= points.Count) 
+            //{
+            //    targetIndex = 0;
+            //}
+        }
+        agent.SetDestination(points[targetIndex].position);
+
+        // For 2 points
+        //if (point1 == null || point2 == null) 
+        //{
+        //    return;
+        //}
+
+        //if(agent.remainingDistance < stoppingDistanceCheck) 
+        //{
+        //    isGoingToPoint1 = !isGoingToPoint1;
+        //}
+        //if (isGoingToPoint1)
+        //{
+        //    agent.SetDestination(point1.position);
+        //}
+        //else 
+        //{
+        //    agent.SetDestination(point2.position);
+        //}
 
         if (agent.velocity.x > 0)
         {
